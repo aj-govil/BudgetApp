@@ -1,0 +1,141 @@
+﻿<Window x:Class="ZAMWPFHomeBudget.Form"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZAMWPFHomeBudget"
+        mc:Ignorable="d"
+        Title="Form" Height="800" Width="1000">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Offset="0.00" Color="LightSeaGreen"/>
+                <!-- dark purple -->
+                <GradientStop Offset="0.35" Color="Purple"/>
+                <!-- light purple -->
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid Height="705" Width="850" Background="BlueViolet" Margin="25">
+
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="3*"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.Resources>
+                <SolidColorBrush x:Key="brush" Color="black"></SolidColorBrush>
+                <SolidColorBrush x:Key="lightBrush" Color="Gray"></SolidColorBrush>
+            </Grid.Resources>
+            <Border Grid.Column="0" Grid.Row="0"  BorderBrush="{StaticResource brush}" BorderThickness= "3 3 0 3" CornerRadius="7 0 0 0" ></Border>
+            <Border Grid.Column="1" Grid.Row="0"  BorderBrush="{StaticResource brush}" BorderThickness= "0 3 0 3" CornerRadius="0 0 0 0" ></Border>
+            <Border Grid.Column="2" Grid.Row="0"  BorderBrush="{StaticResource brush}" BorderThickness= "0 3 3 3" CornerRadius="0 7 0 0" ></Border>
+            <Border Grid.Column="0" Grid.Row="1"  BorderBrush="{StaticResource brush}" BorderThickness= "3 0 0 0" CornerRadius="0 0 0 0" ></Border>
+            <Border Grid.Column="0" Grid.Row="2"  BorderBrush="{StaticResource brush}" BorderThickness= "3 0 0 0" CornerRadius="0 0 0 0" ></Border>
+            <Border Grid.Column="0" Grid.Row="3"  BorderBrush="{StaticResource brush}" BorderThickness= "0 0 0 0" CornerRadius="0 0 0 0" ></Border>
+            <Border Grid.Column="2" Grid.Row="1"  BorderBrush="{StaticResource brush}" BorderThickness= "0 0 3 0" CornerRadius="0 0 0 0" ></Border>
+            <Border Grid.Column="2" Grid.Row="2"  BorderBrush="{StaticResource brush}" BorderThickness= "0 0 3 0" CornerRadius="0 0 0 0" ></Border>
+            <Border Grid.Column="2" Grid.Row="3"  BorderBrush="{StaticResource brush}" BorderThickness= "0 0 0 3" CornerRadius="0 0 0 0" ></Border>
+            <Border Grid.Column="1" Grid.Row="3"  BorderBrush="{StaticResource brush}" BorderThickness= "0 0 0 3" CornerRadius="0 0 0 0" ></Border>
+            <Border Grid.Column="2" Grid.Row="2"  BorderBrush="{StaticResource brush}" BorderThickness= "0 0 0 0" CornerRadius="0 0 0 0" ></Border>
+            <Border Grid.Column="2" Grid.Row="3"  BorderBrush="{StaticResource brush}" BorderThickness= "0 0 3 3" CornerRadius="0 0 0 0" ></Border>
+            <Border Grid.Column="0" Grid.Row="3"  BorderBrush="{StaticResource brush}" BorderThickness= "3 0 0 3" CornerRadius="0 0 0 0" ></Border>
+
+
+            <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="4"  BorderBrush="{StaticResource brush}" BorderThickness="0 0 3 0"/>
+            <Border Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3"  BorderBrush="{StaticResource brush}" BorderThickness="0 3 0 0"/>
+
+            <TextBlock Grid.Column="1" TextAlignment="Center" FontSize="21" FontWeight="Bold" Foreground="White">ZAM HomeBudget</TextBlock>
+            <Label Grid.ColumnSpan="2" Grid.Row="1" FontSize="20" HorizontalContentAlignment="Center" Foreground="White">Add Expense</Label>
+            <StackPanel Grid.Row="2">
+                <Label Margin="5, 0, 5, 0" FontSize="14" Foreground="White">Description</Label>
+                <TextBox Margin="5" MinHeight="35" Name="txbExpenseDesc"/>
+                <Label Margin="5, 0, 5, 0" FontSize="14" Foreground="White">Amount</Label>
+                <TextBox Margin="5" MinHeight="35" Name="txbExpenseAmt"/>
+                <Label Margin="5, 0, 5, 0" FontSize="14" Foreground="White">Category</Label>
+                <ComboBox Margin="5" MinHeight="35" Name="cmbExpenseCat"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Grid.Column="1">
+                <Label FontSize="14" Foreground="White">Date</Label>
+                <DatePicker Name="calExpenseDate"></DatePicker>
+                
+            </StackPanel>
+
+            
+
+            <Label Grid.Row="1" Grid.Column="2" FontSize="20" HorizontalContentAlignment="Center" Foreground="White">Add Category</Label>
+            <StackPanel Grid.Row="2" Grid.Column="2">
+                <Label Margin="5, 0, 5, 0" FontSize="14" Foreground="White">Description</Label>
+                <TextBox Margin="5" MinHeight="35" Name="txbCatDesc"/>
+                <Label Margin="5, 0, 5, 0" FontSize="14" Foreground="White">Type</Label>
+                <ComboBox Margin="5" MinHeight="35" Name="cmbCatType">
+                    <ComboBoxItem>Income</ComboBoxItem>
+                    <ComboBoxItem>Expense</ComboBoxItem>
+                    <ComboBoxItem>Credit</ComboBoxItem>
+                    <ComboBoxItem>Savings</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+
+            <TextBlock Grid.Row="0" Grid.Column="2" FontWeight="Bold" TextAlignment="Center" Name="fileWorking" FontSize="8" Margin="0,20,0,0" Foreground="White">t</TextBlock>
+            <Button Grid.Column="0" Grid.Row="3" Click="AddExpense_Click" Content="Add Expense" Margin="10" MinHeight="30" Foreground="White" Background="DarkViolet"/>
+            <Button Grid.Column="1" Grid.Row="3" Click="Clear_Click" Content="Clear Expense Information" Margin="10" MinHeight="30" Foreground="White" Background="DarkViolet"/>
+            <Button Grid.Column="2" Grid.Row="3" Content="Add Category" Margin="10" MinHeight="30"  Name="btnAddCat" Click="btnAddCat_Click" Foreground="White" Background="DarkViolet"/>
+            <CheckBox Grid.Column="2" Grid.Row="4" Content="By Month" Margin="10" MinHeight="30" Foreground="White" Background="DarkViolet" Name="ByMonthCheckBox" Click="ExpenseGridByMonth_Click"/>
+                <CheckBox Grid.Column="1" Grid.Row="4" Content="By Category" Margin="10" MinHeight="30"  Foreground="White" Background="DarkViolet" Name="ByCategoryCheckbox" Click="ByCategoryChecked"/>
+            <CheckBox Grid.Column="0" Grid.Row="4" Content="Filter By Category" Margin="10" MinHeight="30" Foreground="White" Background="DarkViolet" Name="FilterByCategory" Click="btnFilterCat_Click"/>
+                <ComboBox Grid.Column="0" Grid.Row="5" Name="cmbExpenseFilterCat" SelectionChanged="cmbFilterCat_Click" SelectedIndex="0"></ComboBox>
+            <DatePicker Grid.Column="1" Grid.Row="5" Name="filterExpenseStartDate" SelectedDateChanged="dpFilterDate_Click"></DatePicker>
+            <DatePicker Grid.Column="2" Grid.Row="5" Name="filterExpenseEndDate" SelectedDateChanged="dpFilterDate_Click"></DatePicker>
+
+
+
+            <DataGrid Grid.Row="6" Grid.ColumnSpan="3" Height="250" Name="myDataGrid" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="ExpenseGridModify_Click"
+                      
+                      
+                         ScrollViewer.CanContentScroll="True" 
+      ScrollViewer.VerticalScrollBarVisibility="Auto"
+      ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                <DataGrid.Columns>
+
+                
+                        <DataGridTextColumn x:Name="IdData" Header="Id" Binding="{Binding Id}" />
+                    <DataGridTextColumn x:Name="DateData" Header="Date" Binding="{Binding Date, StringFormat=\{0:yyyy/MM/dd\}}"/>
+                    <DataGridTextColumn x:Name="CategoryData" Header="Category" Binding="{Binding Category}" />
+                    <DataGridTextColumn x:Name="DescriptionData" Header="Description" Binding="{Binding ShortDescription}" />
+                        <DataGridTextColumn x:Name="AmountData" Header="Amount" Binding="{Binding Amount, StringFormat=N2}" />
+                        <DataGridTextColumn x:Name="MonthData" Header="Month" Binding="{Binding Month}" />
+                        <DataGridTextColumn x:Name="Total" Header="Total" Binding="{Binding Total}" />
+ 
+                        <DataGridTextColumn x:Name="BalanceData" Header="Balance" Binding="{Binding Balance, StringFormat=N2}" />
+                    </DataGrid.Columns>
+                <DataGrid.ContextMenu>
+                    <ContextMenu Name="cmExpense">
+                        <MenuItem Header="Modify" Click="ExpenseGridModify_Click"></MenuItem>
+                        <MenuItem Header="Delete" Click="ExpenseGridDelete_Click"></MenuItem>
+                        <Separator />
+                        <MenuItem Header="Cancel" Click="ExpenseGridCancel_Click"></MenuItem>
+                    </ContextMenu>
+
+                </DataGrid.ContextMenu>
+            </DataGrid>
+    
+        </Grid>
+
+    </Grid>
+    </ScrollViewer>
+</Window>

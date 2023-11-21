@@ -1,0 +1,82 @@
+﻿<Window x:Class="ZAMWPFHomeBudget.UpdateForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZAMWPFHomeBudget"
+        mc:Ignorable="d"
+        Title="UpdateForm" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Offset="0.00" Color="LightSeaGreen"/>
+                <!-- dark purple -->
+                <GradientStop Offset="0.35" Color="Purple"/>
+                <!-- light purple -->
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid Height="285" Width="400" Background="BlueViolet">
+
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="4*"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.Resources>
+                <SolidColorBrush x:Key="brush" Color="black"></SolidColorBrush>
+                <SolidColorBrush x:Key="lightBrush" Color="Gray"></SolidColorBrush>
+            </Grid.Resources>
+            <Border Grid.Column="0" Grid.Row="0"  BorderBrush="{StaticResource brush}" BorderThickness= "3 3 0 3" CornerRadius="7 0 0 0" ></Border>
+            <Border Grid.Column="1" Grid.Row="0"  BorderBrush="{StaticResource brush}" BorderThickness= "0 3 0 3" CornerRadius="0 0 0 0" ></Border>
+            <Border Grid.Column="2" Grid.Row="0"  BorderBrush="{StaticResource brush}" BorderThickness= "0 3 3 3" CornerRadius="0 7 0 0" ></Border>
+            <Border Grid.Column="0" Grid.Row="1"  BorderBrush="{StaticResource brush}" BorderThickness= "3 0 0 0" CornerRadius="0 0 0 0" ></Border>
+            <Border Grid.Column="0" Grid.Row="2"  BorderBrush="{StaticResource brush}" BorderThickness= "3 0 0 0" CornerRadius="0 0 0 0" ></Border>
+            <Border Grid.Column="0" Grid.Row="3"  BorderBrush="{StaticResource brush}" BorderThickness= "0 0 0 0" CornerRadius="0 0 0 0" ></Border>
+            <Border Grid.Column="2" Grid.Row="1"  BorderBrush="{StaticResource brush}" BorderThickness= "0 0 3 0" CornerRadius="0 0 0 0" ></Border>
+            <Border Grid.Column="2" Grid.Row="2"  BorderBrush="{StaticResource brush}" BorderThickness= "0 0 3 0" CornerRadius="0 0 0 0" ></Border>
+            <Border Grid.Column="2" Grid.Row="3"  BorderBrush="{StaticResource brush}" BorderThickness= "0 0 0 3" CornerRadius="0 0 0 0" ></Border>
+            <Border Grid.Column="1" Grid.Row="3"  BorderBrush="{StaticResource brush}" BorderThickness= "0 0 0 3" CornerRadius="0 0 0 0" ></Border>
+            <Border Grid.Column="2" Grid.Row="2"  BorderBrush="{StaticResource brush}" BorderThickness= "0 0 0 0" CornerRadius="0 0 0 0" ></Border>
+            <Border Grid.Column="2" Grid.Row="3"  BorderBrush="{StaticResource brush}" BorderThickness= "0 0 3 3" CornerRadius="0 0 0 0" ></Border>
+            <Border Grid.Column="0" Grid.Row="3"  BorderBrush="{StaticResource brush}" BorderThickness= "3 0 0 3" CornerRadius="0 0 0 0" ></Border>
+
+
+            <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="4"  BorderBrush="{StaticResource brush}" BorderThickness="0 0 3 0"/>
+            <Border Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3"  BorderBrush="{StaticResource brush}" BorderThickness="0 3 0 0"/>
+
+            <TextBlock Grid.Column="0" Grid.ColumnSpan="2" TextAlignment="Center" FontSize="21" FontWeight="Bold" Foreground="White">ZAM HomeBudget</TextBlock>
+            <Label Grid.ColumnSpan="2" Grid.Row="1" FontSize="20" HorizontalContentAlignment="Center" Foreground="White">Update Expense</Label>
+            <StackPanel Grid.Row="2">
+                <Label Margin="5, 0, 5, 0" FontSize="14" Foreground="White">Description</Label>
+                <TextBox Margin="5" MinHeight="35" Name="txbExpenseDesc"/>
+                <Label Margin="5, 0, 5, 0" FontSize="14" Foreground="White">Amount</Label>
+                <TextBox Margin="5" MinHeight="35" Name="txbExpenseAmt"/>
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Grid.Column="1">
+                <Label FontSize="14" Foreground="White">Date</Label>
+                <DatePicker Name="calExpenseDate" MinHeight="30" Margin="3"/>
+                <Label Margin="5, 7, 5, 0" FontSize="14" Foreground="White">Category</Label>
+                <ComboBox Margin="5, 7, 5, 0" MinHeight="35" Name="cmbExpenseCat"/>
+
+            </StackPanel>
+
+
+            <TextBlock Grid.Row="0" Grid.Column="2" FontWeight="Bold" TextAlignment="Center" Name="fileWorking" FontSize="8" Margin="0,30,0,0" Foreground="White">t</TextBlock>
+            <Button Grid.Column="0" Grid.Row="3" Click="btnUpdate_Click"  Content="Update Expense" Margin="10" MinHeight="30" Foreground="White" Background="DarkViolet"/>
+            <Button Grid.Column="1" Grid.Row="3" Click="Clear_Click" Content="Clear Expense Information" Margin="10" MinHeight="30" Foreground="White" Background="DarkViolet"/>
+       
+
+        </Grid>
+
+    </Grid>
+</Window>
