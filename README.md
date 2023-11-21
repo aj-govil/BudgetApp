@@ -1,5 +1,7 @@
 # Budgeting Application
 
+![homeBudget](https://github.com/aj-govil/BudgetApp/assets/98484980/ad46455b-9992-4a5d-bbde-b0678699acf2)
+
 ## Overview
 
 The Budgeting Application is a comprehensive financial tool built using WPF (Windows Presentation Foundation) and C#. It provides users with a powerful and intuitive interface to manage their budgets, track expenses, and gain insights into their financial health.
